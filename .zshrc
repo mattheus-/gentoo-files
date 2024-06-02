@@ -57,3 +57,5 @@ eval "$(fzf --zsh)"
 # }
 
 # add-zsh-hook chpwd tmux-window-name
+
+alias ls="eza --color=always --long --icons=always"
