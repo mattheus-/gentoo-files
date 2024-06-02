@@ -59,3 +59,18 @@ eval "$(fzf --zsh)"
 # add-zsh-hook chpwd tmux-window-name
 
 alias ls="eza --color=always --long --icons=always"
+
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+_fzf_comprun(){
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$' {}" "$@" ;;
+    ssh)          fzf --preview 'dig {}'            "$@" ;;
+    *)            fzf --preview "--preview 'bat -n --color=always --line-range :500 {}'" "$@" ;;
+  esac
+}
