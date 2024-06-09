@@ -47,6 +47,7 @@ fi
 
 alias vim="nvim"
 alias lg="lazygit"
+alias Obsidian="flatpak run md.obsidian.Obsidian"
 
 export KITTY_CONFIG_DIRECTORY="${USER}/.config/kitty"
 source $ZSH/oh-my-zsh.sh
