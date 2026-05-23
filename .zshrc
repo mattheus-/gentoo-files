@@ -49,7 +49,7 @@ alias vim="nvim"
 alias lg="lazygit"
 alias Obsidian="flatpak run md.obsidian.Obsidian"
 
-export KITTY_CONFIG_DIRECTORY="${USER}/.config/kitty"
+export KITTY_CONFIG_DIRECTORY="${HOME}/.config/kitty"
 source $ZSH/oh-my-zsh.sh
 eval "$(fzf --zsh)"
 
@@ -75,3 +75,4 @@ _fzf_comprun(){
     *)            fzf --preview "--preview 'bat -n --color=always --line-range :500 {}'" "$@" ;;
   esac
 }
+alias dot="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
